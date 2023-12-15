@@ -18,7 +18,7 @@ def flood(sock: socket.SocketType, proxy: Dict[str, str]) -> None:
         None
     """
     laddr, port = sock.getsockname()
-    random_header = random.randint(1, 50000)
+    random_header = random.randint(1, 1000)
     sock.send(f"X-a: {random_header}".encode("utf-8"))
     proxy_addr = (
         f"{F.RESET}|{F.RESET} Proxy: {F.BLUE}{proxy['addr'] + ':' + proxy['port']:>21} "
